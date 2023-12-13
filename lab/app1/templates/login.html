@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add user</title>
+</head>
+<body><center>
+<h2>Add New user</h2></center>
+<h2>{{msg}}</h2>
+<form action="" method="post">
+     {% csrf_token %}
+    First Name : <input type="text" name="fname"><br><br>
+    Last Name : <input type="text" name="lname"><br><br>
+    Phone Number : <input type="text" name="ph"><br><br>
+    Email : <input type="email" name="email"><br><br>
+<input type="submit" value="save"> back to home <a href="{% url 'home' %}">home</a>
+</form>
+</body>
+</html>

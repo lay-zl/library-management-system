@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allmb</title>
+</head>
+<body>
+<center>
+    <a href="{% url 'home' %}">home</a>
+
+{% if ob%}
+<table border="1">
+    <thead>
+
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last name</th>
+        <th>Mobile No</th>
+        <th>email</th>
+        <th>action</th>
+
+    </thead>
+    <tbody>
+    <h2>member list</h2>
+    {% for p in ob%}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.firstname}}</td>
+        <td>{{p.lastname}}</td>
+        <td>{{p.phoneno}}</td>
+        <td>{{p.email}}</td>
+        <td>
+            <a href="{% url 'editmember' p.id %}">edit</a>
+            <a href="{% url 'deletemember' p.id %}">delete</a>
+        </td>
+
+    {%endfor%}
+
+    </tbody>
+</table>
+
+{%else%}
+<h5>No record</h5>
+{%endif%}
+</center>
+</body>
+</html>

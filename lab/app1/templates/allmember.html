@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allmember</title>
+</head>
+<body>
+
+<a href="{% url 'home' %}">home</a>
+{% if ob%}
+<table border="1">
+    <thead>
+
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last name</th>
+        <th>Mobile No</th>
+        <th>email</th>
+        <th>Book id</th>
+        <th>Book name</th>
+        <th>Issue date</th>
+        <th>return date</th>
+        <th>action</th>
+
+    </thead>
+    <tbody>
+    {% for p in ob%}
+    <tr>
+        <td>{{p.user__id}}</td>
+        <td>{{p.user__firstname}}</td>
+        <td>{{p.user__lastname}}</td>
+        <td>{{p.user__phoneno}}</td>
+        <td>{{p.user__email}}</td>
+        <td>{{p.book__id}}</td>
+        <td>{{p.book__name}}</td>
+        <td>{{p.idate}}</td>
+        <td>{{p.rdate}}</td>
+        <td>
+            <a href="{% url 'editmember' p.user__id %}">edit</a>
+            <a href="{% url 'deletemember' p.user__id %}">delete</a>
+        </td>
+
+    {%endfor%}
+
+    </tbody>
+</table>
+
+{%else%}
+<h5>No record</h5>
+{%endif%}
+
+
+</body>
+</html>

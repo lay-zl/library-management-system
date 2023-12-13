@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allbok</title>
+</head>
+<body>
+
+
+<center>
+
+<a href="{% url 'home' %}">back to home</a><br>
+
+{% if ob%}
+<table border="1">
+    <thead>
+
+        <th>Id</th>
+        <th> Book Name</th>
+        <th>author</th>
+        <th>publisher</th>
+        <th>Action</th>
+
+    </thead>
+    <tbody>
+    {% for p in ob%}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.author}}</td>
+        <td>{{p.publisher}}</td>
+        <td>
+        <a href="{% url 'editbook' p.id %}">edit</a>
+            <a href="{% url 'deletebook' p.id %}">delete</a>
+        </td>
+    {%endfor%}
+
+    </tbody>
+</table>
+
+{%else%}
+<h5>No record</h5>
+{%endif%}
+
+</center>
+</body>
+</html>

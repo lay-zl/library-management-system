@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addbook</title>
+</head>
+<body><center>
+<h2>Add book</h2></center>
+<h2>{{msg}}</h2>
+
+<form action="" method="post">
+    {% csrf_token %}
+     Book name : <input type="text" name="bname"><br><br>
+    Publisher : <input type="text" name="pub"><br><br>
+    Author : <input type="text" name="auth"><br><br>
+<input type="submit" value="save"> back to home <a href="{% url 'home' %}">home</a>
+</form>
+</body>
+</html>

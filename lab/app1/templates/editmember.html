@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+</head>
+<body>
+<form action="" method="post">
+  {% csrf_token %}
+  {{f.as_p}}
+
+  <input type="submit" value="edit"> <a href="{% url 'allus' %}">cancel</a><br><br>
+  <a href="{% url 'allus' %}">back</a>
+</form>
+</body>
+</html>

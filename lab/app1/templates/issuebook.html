@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>issuebook</title>
+</head>
+<body><center>
+<h2>Issue book to member</h2></center>
+<h2>{{msg}}</h2>
+</body>
+<form action="" method="post">
+    {% csrf_token %}
+    Book Id : <input type="text" name="bid"><br><br>
+    Book name : <input type="text" name="bname"><br><br>
+    Member ID : <input type="text" name="mid"><br><br>
+    Member Name : <input type="text" name="mname"><br><br>
+
+
+    <input type="submit" value="save"> back to home <a href="{% url 'home' %}">home</a>
+</form>
+</html>

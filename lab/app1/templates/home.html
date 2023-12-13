@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body><center>
+<h2>Welcome to Chutiya Lab</h2>
+<h2> you admin</h2>
+    <a href="{% url 'allbook' %}">view all book</a><br><br>
+<a href="{% url 'login' %}">add new user</a><br><br>
+<a href="{% url 'addbook' %}">add new book</a><br><br>
+<a href="{% url 'ibook' %}">issue new book</a><br><br>
+<a href="{% url 'allus' %}">see all member</a><br><br>
+    <a href="{% url 'allmemberbook' %}">all member with issued book</a><br><br>
+    <a href="{% url 'return' %}">return book</a>
+    </center>
+</body>
+</html>
